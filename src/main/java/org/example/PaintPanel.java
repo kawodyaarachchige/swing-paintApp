@@ -5,13 +5,13 @@ import java.awt.event.*;
 
 
 public class PaintPanel extends JPanel {
-    private Color currentColor = Color.BLACK;
+    private Color currentColor = Color.green;
     private int startX, startY, endX, endY;
     private ShapeType currentShapeType = ShapeType.LINE;
 
     public PaintPanel() {
         setPreferredSize(new Dimension(600, 400));
-        setBackground(Color.WHITE);
+        setBackground(Color.BLACK);
 
         MouseAdapter adapter = new PaintMouseListener();
         addMouseListener(adapter);
