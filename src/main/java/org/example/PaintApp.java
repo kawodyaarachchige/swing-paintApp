@@ -1,17 +1,9 @@
 package org.example;
 
-
-import javax.swing.*;
-
-import javax.swing.*;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+
 
 public class PaintApp {
     public static void main(String[] args) {
@@ -22,19 +14,16 @@ public class PaintApp {
             PaintPanel paintPanel = new PaintPanel();
 
             JPanel controlPanel = new JPanel();
-            JButton redButton = new JButton("Red");
-            redButton.addActionListener(e -> paintPanel.setLineColor(Color.RED));
-            JButton blueButton = new JButton("Blue");
-            blueButton.addActionListener(e -> paintPanel.setLineColor(Color.BLUE));
-            JButton blackButton = new JButton("Black");
-            blackButton.addActionListener(e -> paintPanel.setLineColor(Color.BLACK));
-            JButton clearButton = new JButton("Clear");
-            clearButton.addActionListener(e -> paintPanel.clearCanvas());
+            JButton lineButton = new JButton("Line");
+            lineButton.addActionListener(e -> paintPanel.setCurrentShapeType(PaintPanel.ShapeType.LINE));
+            JButton rectangleButton = new JButton("Rectangle");
+            rectangleButton.addActionListener(e -> paintPanel.setCurrentShapeType(PaintPanel.ShapeType.RECTANGLE));
+            JButton circleButton = new JButton("Circle");
+            circleButton.addActionListener(e -> paintPanel.setCurrentShapeType(PaintPanel.ShapeType.CIRCLE));
 
-            controlPanel.add(redButton);
-            controlPanel.add(blueButton);
-            controlPanel.add(blackButton);
-            controlPanel.add(clearButton);
+            controlPanel.add(lineButton);
+            controlPanel.add(rectangleButton);
+            controlPanel.add(circleButton);
 
             frame.getContentPane().add(controlPanel, BorderLayout.NORTH);
             frame.getContentPane().add(paintPanel, BorderLayout.CENTER);
